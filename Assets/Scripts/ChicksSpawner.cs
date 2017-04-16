@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,7 +32,7 @@ public class ChicksSpawner : MonoBehaviour {
 	public void AddChick() {
 		if(ChicksCounter.score >= chickPrice) {
 			ChicksCounter.score -= chickPrice; 
-			scoreText.text = " " + ChicksCounter.score + " ";
+			scoreText.text = " " + Math.Round(ChicksCounter.score, 2) + " ";
 			chickPrice *= 1.5f;
 
 			GameObject obj = (GameObject)Instantiate(chick);

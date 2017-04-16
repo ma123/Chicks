@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChicksCounter : MonoBehaviour {
-	float rateConstant = 2.5f;
+	float rateConstant = 3f;
 	float rateIndex = 0.0f;
 	public static float score = 0.0f;
 	public Text scoreText;
@@ -31,11 +32,11 @@ public class ChicksCounter : MonoBehaviour {
 
 	void AddToScore() {
 		score += rateIndex;
-		scoreText.text = " " + score + " ";
+		scoreText.text = " " + Math.Round(score, 2) + " ";
 	}
 
 	void PlusOnePoint() {
 		score += 1.0f;
-		scoreText.text = " " + score + " ";
+		scoreText.text = " " + Math.Round(score, 2) + " ";
 	}
 }
